@@ -4,5 +4,9 @@ import { UpdatePlayerDto } from './dto/update-player.dto';
 
 @Injectable()
 export class PlayersService {
+
+    create(createPlayerDto: CreatePlayerDto) {
+    
+    }
   
 }
