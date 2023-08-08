@@ -12,12 +12,12 @@ describe('PlayersService', () => {
     service = module.get<PlayersService>(PlayersService);
   });
 
-  it('should be defined now', () => {
+  it('should be defined', () => {
     expect(service).toBeDefined();
   });
 
-  //first test for creating a player
-  describe('createPlayer', () => {
+   //first test for creating a player
+   describe('createPlayer', () => {
     it('should return a new player with the given information and the satus', async () => {
       const newPlayer = await service.create({ 
         firstname: "Soufiane",
