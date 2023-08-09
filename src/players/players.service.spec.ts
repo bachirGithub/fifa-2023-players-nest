@@ -25,6 +25,7 @@ describe('PlayersService', () => {
         goal:12,
         salary:2000,
         devise:"MAD",
+        pictureURl: ""
       });
       expect(newPlayer).toEqual({
         statusCode: 200,
@@ -35,6 +36,7 @@ describe('PlayersService', () => {
           goal:12,
           salary:2000,
           devise:"MAD",
+          pictureURl:""
         }
       });
     });
