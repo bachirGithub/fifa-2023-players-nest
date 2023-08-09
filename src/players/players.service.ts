@@ -40,6 +40,7 @@ export class PlayersService {
       }),
       this.prisma.player.count(),
     ]);
+    
    const players = items.map( item => {
     return {
         id: item.id,
@@ -49,7 +50,7 @@ export class PlayersService {
         salary: item.salary+' '+ item.devise,
     }
    })
-   
+
     return {
       players,
       totalCount,
