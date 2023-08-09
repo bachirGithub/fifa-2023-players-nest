@@ -14,7 +14,7 @@ describe('PlayersController', () => {
     controller = module.get<PlayersController>(PlayersController);
   });
 
-  it('should get all players', () => {
+  it('should get all players', async() => {
     const response = await controller.findAll();
 
     // Andres is the first in the list

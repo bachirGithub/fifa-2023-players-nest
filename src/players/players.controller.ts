@@ -5,12 +5,18 @@ import { UpdatePlayerDto } from './dto/update-player.dto';
 
 @Controller('players')
 export class PlayersController {
-  
+
   constructor(private readonly playersService: PlayersService) {}
 
   @Post()
-  create(@Body() createPlayerDto: CreatePlayerDto) {
+  async create(@Body() createPlayerDto: CreatePlayerDto) {
     return this.playersService.create(createPlayerDto);
   }
+
+  @Get()
+  async findAll() {
+    // return await this.playersService.findAll();
+  }
+
 
 }
