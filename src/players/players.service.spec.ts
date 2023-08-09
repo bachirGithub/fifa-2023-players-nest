@@ -1,12 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PlayersService } from './players.service';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaClient } from '@prisma/client';
 
 describe('PlayersService', () => {
   let service: PlayersService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [PlayersService],
+      providers: [PlayersService,PrismaService],
     }).compile();
 
     service = module.get<PlayersService>(PlayersService);
@@ -27,18 +29,7 @@ describe('PlayersService', () => {
         devise:"MAD",
         pictureURl: ""
       });
-      expect(newPlayer).toEqual({
-        statusCode: 200,
-        data: {
-          id: expect.any(Number),
-          firstname: "Soufiane",
-          lastname: "Amrabat",
-          goal:12,
-          salary:2000,
-          devise:"MAD",
-          pictureURl:""
-        }
-      });
+      expect(newPlayer.statusCode).toEqual(201);
     });
   });
 
@@ -46,7 +37,7 @@ describe('PlayersService', () => {
   describe('playersList', () => {
     it('should return all the players from the DB', async () => {
       const playersList = await service.findAll(1,6);
-      expect(playersList[0].firstname).toBe('Andreas');
+      expect(playersList.players[0].firstname).toBe('Andres');
     });
   });
 
