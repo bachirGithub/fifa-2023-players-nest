@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { PlayersService } from './players.service';
 import { CreatePlayerDto } from './dto/create-player.dto';
 import { UpdatePlayerDto } from './dto/update-player.dto';
@@ -14,8 +14,8 @@ export class PlayersController {
   }
 
   @Get()
-  async findAll() {
-    // return await this.playersService.findAll();
+  async findAll(@Query('page') page = 1, @Query('limit') limit = 6) {
+    return await this.playersService.findAll(page,limit);
   }
 
 

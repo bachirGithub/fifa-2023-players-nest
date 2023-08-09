@@ -30,7 +30,23 @@ export class PlayersService {
   }
 
   async findAll(page: number, limit: number) {
-    
+    const skip = (page - 1) * limit;
+
+    const [items, totalCount] = await Promise.all([
+      this.prisma.player.findMany({
+        skip,
+        take: limit,
+      }),
+      this.prisma.player.count(),
+    ]);
+
+    return {
+      items,
+      totalCount,
+      totalPages: Math.ceil(totalCount / limit),
+      currentPage: page,
+    };
+
   
   }
 
