@@ -25,7 +25,6 @@ describe('PlayersService', () => {
         goal:12,
         salary:2000,
         devise:"MAD",
-        pictureURl:"https://upload.wikimedia.org/wikipedia/commons/e/e1/Hakim_Ziyech_2021.jpg"
       });
       expect(newPlayer).toEqual({
         statusCode: 200,
@@ -36,7 +35,6 @@ describe('PlayersService', () => {
           goal:12,
           salary:2000,
           devise:"MAD",
-          pictureURl:"https://upload.wikimedia.org/wikipedia/commons/e/e1/Hakim_Ziyech_2021.jpg"
         }
       });
     });

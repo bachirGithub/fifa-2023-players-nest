@@ -17,11 +17,16 @@ export class PlayersService {
         goal:12,
         salary:2000,
         devise:"MAD",
-        pictureURl:"https://upload.wikimedia.org/wikipedia/commons/e/e1/Hakim_Ziyech_2021.jpg"
       }
     }
     
   }
+
+  async findAll(page: number, limit: number) { 
+
+    
+  }
+
 
 
 }
