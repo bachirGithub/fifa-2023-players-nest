@@ -14,7 +14,11 @@ describe('PlayersController', () => {
     controller = module.get<PlayersController>(PlayersController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+  it('should get all players', () => {
+    const response = await controller.findAll();
+
+    // Andres is the first in the list
+    expect(response[0].firstname).toEqual('Andres');
   });
+
 });
