@@ -49,6 +49,7 @@ export class PlayersService {
         salary: item.salary+' '+ item.devise,
     }
    })
+   
     return {
       players,
       totalCount,
