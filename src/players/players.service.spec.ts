@@ -45,7 +45,6 @@ describe('PlayersService', () => {
   });
 
   ///findAll with pagination
-  //first test for creating a player
   describe('pagination on findAll', () => {
     it('should return return all players with pagination', async () => {
       const response = await service.findAll(1,6);
