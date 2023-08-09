@@ -3,6 +3,7 @@ import { CreatePlayerDto } from './dto/create-player.dto';
 import { UpdatePlayerDto } from './dto/update-player.dto';
 import { PrismaService } from '../prisma/prisma.service';
 
+
 @Injectable()
 export class PlayersService {
 
@@ -39,9 +40,22 @@ export class PlayersService {
       }),
       this.prisma.player.count(),
     ]);
+    const players = items.map(item =>{
+      return {
+        
+          id: item.id,
+          firstname: item.firstname,
+          lastname: item.lastname,
+          goal: item.goal,
+          salary: item.salary + item.devise,
+          pictureURl: item.pictureURl,
+          createdAt: item.createdAt,
+          updatedAt: item.updatedAt
+      }
+      });
 
     return {
-      items,
+      players,
       totalCount,
       totalPages: Math.ceil(totalCount / limit),
       currentPage: page,
