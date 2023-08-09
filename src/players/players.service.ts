@@ -26,7 +26,7 @@ export class PlayersService {
     
     return [
       {
-        firstname: "Andeas",
+        firstname: "Andreas",
       }
     ]
     

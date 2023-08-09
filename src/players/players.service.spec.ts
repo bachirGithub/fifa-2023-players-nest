@@ -44,7 +44,7 @@ describe('PlayersService', () => {
   describe('playersList', () => {
     it('should return all the players from the DB', async () => {
       const playersList = await service.findAll(1,6);
-      expect(playersList[0].firstname).toEqual('Andreas');
+      expect(playersList[0].firstname).toBe('Andreas');
     });
   });
 
