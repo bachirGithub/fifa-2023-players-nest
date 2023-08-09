@@ -40,4 +40,12 @@ describe('PlayersService', () => {
     });
   });
 
+  //first test for creating a player
+  describe('playersList', () => {
+    it('should return all the players from the DB', async () => {
+      const playersList = await service.findAll(1,6);
+      expect(playersList[0].firstname).toEqual('Andreas');
+    });
+  });
+
 });

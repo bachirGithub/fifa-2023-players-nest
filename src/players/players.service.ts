@@ -23,7 +23,12 @@ export class PlayersService {
   }
 
   async findAll(page: number, limit: number) { 
-
+    
+    return [
+      {
+        firstname: "Andeas",
+      }
+    ]
     
   }
 
