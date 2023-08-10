@@ -56,10 +56,10 @@ describe('PlayersService', () => {
     });
   });
 
-   //test for update a player
+   //test for suppression a player
    describe('supprimerPlayer', () => {
     it('should return a confirmation message', async () => {
-      const removePlayer = await service.remove(7);
+      const removePlayer = await service.remove(28);
       expect(removePlayer.message).toEqual("Joueur supprimé avec succès");
     });
   });

@@ -84,8 +84,16 @@ export class PlayersService {
 
   }
 
-  remove(id: number) {
+  async remove(id: number) {
+
+    const deletePlayer = await this.prisma.player.delete({
+      where: {
+        id,
+      },
+    });
     return {
+      statusCode: 200,
+      data: deletePlayer,
       message: "Joueur supprimé avec succès"
     };
   }

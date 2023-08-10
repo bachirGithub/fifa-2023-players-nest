@@ -23,4 +23,9 @@ export class PlayersController {
     return this.playersService.update(+id, updatePlayerDto);
   }
 
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.playersService.remove(+id);
+  }
+
 }
