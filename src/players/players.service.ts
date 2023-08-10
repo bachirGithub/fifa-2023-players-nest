@@ -61,6 +61,10 @@ export class PlayersService {
     
   }
 
+  update(id: number, updatePlayerDto: UpdatePlayerDto) {
+    
+  }
+
 
 
 }

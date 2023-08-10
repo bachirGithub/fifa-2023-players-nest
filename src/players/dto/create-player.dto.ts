@@ -1,4 +1,4 @@
-import { IsNotEmpty,IsString } from "class-validator";
+import { IsNotEmpty,IsString,IsOptional } from "class-validator";
 
 export class CreatePlayerDto {
 
@@ -9,5 +9,6 @@ export class CreatePlayerDto {
     goal : Number
     salary: Number
     devise: string
+    @IsOptional()
     pictureURl: string
 }
