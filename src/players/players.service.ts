@@ -84,6 +84,10 @@ export class PlayersService {
 
   }
 
-
+  remove(id: number) {
+    return {
+      message: "Joueur supprimé avec succès"
+    };
+  }
 
 }
