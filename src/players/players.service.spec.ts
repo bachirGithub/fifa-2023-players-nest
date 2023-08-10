@@ -33,11 +33,26 @@ describe('PlayersService', () => {
     });
   });
 
-  //first test for creating a player
+  //test for listing players
   describe('playersList', () => {
     it('should return all the players from the DB', async () => {
       const playersList = await service.findAll(1,6);
       expect(playersList.players[0].firstname).toBe('Andres');
+    });
+  });
+
+  //test for update a player
+  describe('updatingPlayer', () => {
+    it('should return a confirmation message', async () => {
+      const newPlayer = await service.update(7,{ 
+        firstname: "Soufiane",
+        lastname: "Amrabat",
+        goal:12,
+        salary:2000,
+        devise:"MAD",
+        pictureURl: ""
+      });
+      expect(newPlayer.message).toEqual("Informations sauvegardée avec succès");
     });
   });
 

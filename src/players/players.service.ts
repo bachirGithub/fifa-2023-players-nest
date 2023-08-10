@@ -61,8 +61,27 @@ export class PlayersService {
     
   }
 
-  update(id: number, updatePlayerDto: UpdatePlayerDto) {
+  async update(id: number, updatePlayerDto: UpdatePlayerDto) {
     
+    const updatePlayer = await this.prisma.player.update({
+      data: {
+        firstname: updatePlayerDto.firstname,
+        lastname:updatePlayerDto.lastname,
+        goal:Number(updatePlayerDto.goal),
+        salary:Number(updatePlayerDto.salary),
+        devise:updatePlayerDto.devise,
+        pictureURl:updatePlayerDto.pictureURl
+      },
+      where: {
+        id,
+      },
+    });
+    return {
+      statusCode: 200,
+      data: updatePlayer,
+      message: "Informations sauvegardée avec succès"
+    };
+
   }
 
 
